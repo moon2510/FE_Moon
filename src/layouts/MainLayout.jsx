@@ -1,23 +1,14 @@
-import { TwitterCircleFilled, PoweroffOutlined } from '@ant-design/icons'
 import Breadcrumbs from '@root/components/BreadCrumb/BreadCrumb'
-import {
-  Layout,
-  Menu,
-  Space,
-  Typography,
-  Avatar,
-  Button,
-  ConfigProvider,
-} from 'antd'
+import { Layout, Menu, ConfigProvider } from 'antd'
 import {} from 'antd'
 import { useState } from 'react'
 import React from 'react'
 import styled from 'styled-components'
 
+import HeaderLayout from './HeaderLayout'
 import { navigations } from './navigations'
 
-const { Text } = Typography
-const { Header, Content, Footer, Sider } = Layout
+const { Content, Footer, Sider } = Layout
 
 const LogoStyled = styled.div`
   display: flex;
@@ -71,39 +62,7 @@ const MainLayouts = ({ children }) => {
           />
         </Sider>
         <Layout className='site-layout'>
-          <Header
-            style={{
-              padding: 0,
-              background: '#001529',
-              position: 'sticky',
-              top: 0,
-              zIndex: 1,
-              width: '100%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              paddingRight: '50px',
-            }}
-          >
-            <div style={{ marginLeft: '20px' }}>
-              <Button icon={<PoweroffOutlined />} type='primary'>
-                Log Off
-              </Button>
-            </div>
-            <Space>
-              <Avatar
-                icon={<TwitterCircleFilled />}
-                size='large'
-                style={{ background: '#ffffff', color: '#000000' }}
-              />
-              <Text style={{ color: '#ffffff', userSelect: 'none' }}>
-                Thỏ Con Xinh Xắn
-              </Text>
-              <Button danger size='small'>
-                Logout
-              </Button>
-            </Space>
-          </Header>
+          <HeaderLayout />
           <Content
             style={{
               margin: '0 16px',
